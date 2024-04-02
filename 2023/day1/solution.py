@@ -36,12 +36,14 @@ def part2_solution():
         for num in inp:
             if num.isdigit():
                 dict_list.append(int(num))
+                distring = ''
             else:
                 distring += num
                 for i in answer_dict:
                     if i in distring:
-
+                        
                         dict_list.append(answer_dict[i])
+                        distring = distring[-1]
 
         if len(dict_list) == 1:
             ans = dict_list[0] * 11
